@@ -15,6 +15,8 @@ def cargar_datos():
 
 try:
     df = cargar_datos()
+    # MAGIA ACÁ: Reemplazamos todas las celdas vacías (NaN) por un texto en blanco
+    df = df.fillna("")
 except Exception as e:
     st.error("🚨 Hubo un problema al conectar con la planilla de Google Drive. Verificá el enlace.")
     st.stop()
